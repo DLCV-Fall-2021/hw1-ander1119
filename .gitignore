@@ -4,3 +4,6 @@
 hw1_data/*
 *png
 *jpg
+*pyc 
+*pth
+*yaml
