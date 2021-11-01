@@ -1,3 +1,3 @@
-python3 problem_1/test.py --checkpoint problem_1/checkpoints/inception_v3/best.pth \
-                            --test-dir $1 \
-                            --output-csv $2
+wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1laU7WHu8aL_wgUWb7Lb8dWSA4FmjwwFr' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1laU7WHu8aL_wgUWb7Lb8dWSA4FmjwwFr" -O inception_v3.zip && rm -rf /tmp/cookies.txt
+unzip inception_v3.zip
+python3 problem_1/test.py --checkpoint inception_v3_best.pth --test-dir $1 --output-csv $2
