@@ -4,7 +4,6 @@ import numpy as np
 import math
 import imageio
 import os
-from tqdm import tqdm
 from PIL import Image
 
 
@@ -36,7 +35,7 @@ def read_image(filepath):
     n_image = len(file_list)
     images = np.empty((n_image, 512, 512, 3), dtype=np.float32)
 
-    for i, file in enumerate(tqdm(file_list)):
+    for i, file in enumerate(file_list):
         image = imageio.imread(os.path.join(filepath, file))
         images[i] = image
 
@@ -72,7 +71,7 @@ def read_masks(filepath):
     n_masks = len(file_list)
     masks = np.empty((n_masks, 512, 512), dtype=np.longlong)
 
-    for i, file in enumerate(tqdm(file_list)):
+    for i, file in enumerate(file_list):
         mask = imageio.imread(os.path.join(filepath, file))
         mask = (mask >= 128).astype(int)
         mask = 4 * mask[:, :, 0] + 2 * mask[:, :, 1] + mask[:, :, 2]
